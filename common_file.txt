@@ -1,3 +1,4 @@
 This is a file that exists on both the OSS remote and the internal remote.
-Then on Oct 13, 2024, a new feature is added in OSS.
+Then on Oct 13, 2024, a new feature is added in OSS. Also a new feature
+that got merged into internal fork first was introduced.
 It added a new file called oss_feature.txt, and updated common_file.txt.
