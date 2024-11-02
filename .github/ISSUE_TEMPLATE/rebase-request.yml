@@ -1,0 +1,44 @@
+name: Rebase Request
+description: Raise an automated rebase request
+labels: ["rebase-request"]
+assignees:
+  - Ethan-Zhang
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit a new issue to trigger an automated rebase job.
+  - type: input
+    id: base_commit
+    attributes:
+      label: Base Commit
+      description: |
+        Enter a commit SHA in this repo you would like to use as the base of the rebase.
+        If you like to use a commit from open-source, push it to this repo via a branch.
+        Please note that the commit time (not author time) of this commit will be used as the rebase anchor time.
+        Each rebase item has valid from and to timestamps in the database. The anchor time will be used to filter the right rebase items to apply.
+    validations:
+      required: true
+  - type: input
+    id: target_branch
+    attributes:
+      label: Target Branch
+      description: |
+        Enter the name of the rebased branch.
+    validations:
+      required: true
+  - type: checkboxes
+    id: force_push
+    attributes:
+      label: Force Push
+      description: |
+        Check to force push to the target branch.
+        Warning: This operation cannot be undone.
+      options:
+        - label: Please force push.
+          required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Other contents
+      description: Anything else to note
